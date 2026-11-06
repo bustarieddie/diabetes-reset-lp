@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "diabetes-reset-lp",
+      "runtimeExecutable": "C:\\Users\\Admin\\bin\\composer.bat",
+      "runtimeArgs": ["run", "dev"],
+      "port": 8000
+    }
+  ]
+}
