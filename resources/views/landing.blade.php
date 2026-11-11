@@ -583,37 +583,6 @@
         </div>
     </section>
 
-    {{-- ============ SECTION 18 — SOCIAL PROOF (placeholder) ============ --}}
-    <section class="py-16 md:py-20 bg-white border-t border-slate-100">
-        <div class="mx-auto max-w-4xl px-5">
-            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 text-center">
-                Real Patients. Real Data. Real Progress.
-            </h2>
-
-            <div class="mt-10 rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 p-8 text-center">
-                <p class="font-semibold text-slate-700">Ruang kajian kes pesakit sebenar</p>
-                <p class="mt-2 text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
-                    Bahagian ini akan dikemas kini dengan kajian kes sebenar (HbA1c, berat, ubat, data CGM,
-                    intervensi dan testimoni yang disahkan) apabila data pesakit Klinik Bustari tersedia.
-                    Tiada testimoni atau keputusan klinikal direka-reka pada halaman ini.
-                </p>
-                <div class="mt-6 grid sm:grid-cols-3 gap-4 text-left opacity-60">
-                    @for ($i = 1; $i <= 3; $i++)
-                        <div class="rounded-xl bg-white border border-slate-200 p-4">
-                            <p class="text-xs font-bold text-slate-400 uppercase">Case {{ sprintf('%02d', $i) }}</p>
-                            <p class="mt-2 text-xs text-slate-400">HbA1c: &mdash;</p>
-                            <p class="text-xs text-slate-400">Weight: &mdash;</p>
-                            <p class="text-xs text-slate-400">CGM: &mdash;</p>
-                        </div>
-                    @endfor
-                </div>
-            </div>
-            <p class="mt-4 text-xs text-slate-400 text-center">
-                Individual results vary. Clinical outcomes depend on multiple factors.
-            </p>
-        </div>
-    </section>
-
     {{-- ============ SECTION 19 — WHAT'S INCLUDED ============ --}}
     <section class="py-16 md:py-20 bg-teal-50">
         <div class="mx-auto max-w-3xl px-5 text-center">
@@ -636,37 +605,6 @@
             </div>
             <p class="mt-6 text-xs text-slate-400">
                 Exact investigations and interventions depend on individual clinical assessment and selected program package.
-            </p>
-        </div>
-    </section>
-
-    {{-- ============ SECTION 20 — PROGRAM OFFER (placeholder pricing) ============ --}}
-    <section class="py-16 md:py-20 bg-white border-t border-slate-100">
-        <div class="mx-auto max-w-4xl px-5">
-            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 text-center">Choose Your Diabetes Reset Program</h2>
-
-            <div class="mt-10 grid md:grid-cols-2 gap-6">
-                <div class="rounded-2xl border border-slate-200 p-8">
-                    <h3 class="text-lg font-extrabold text-slate-900">Basic</h3>
-                    <p class="mt-4 text-sm text-slate-400 italic">Komponen program akan disahkan.</p>
-                    <p class="mt-6 text-2xl font-black text-slate-300">RM &mdash;</p>
-                    <button disabled class="mt-6 w-full rounded-full border border-slate-300 text-slate-400 font-semibold py-3 cursor-not-allowed">
-                        Start Basic
-                    </button>
-                </div>
-                <div class="rounded-2xl border-2 border-amber-400 bg-amber-50/40 p-8 relative">
-                    <span class="absolute -top-3 left-8 rounded-full bg-amber-500 text-white text-[11px] font-bold px-3 py-1 uppercase tracking-wide">Most Comprehensive</span>
-                    <h3 class="text-lg font-extrabold text-slate-900">Advance</h3>
-                    <p class="mt-4 text-sm text-slate-400 italic">Komponen program akan disahkan.</p>
-                    <p class="mt-6 text-2xl font-black text-slate-300">RM &mdash;</p>
-                    <button disabled class="mt-6 w-full rounded-full bg-amber-300 text-white font-semibold py-3 cursor-not-allowed">
-                        Start Advance
-                    </button>
-                </div>
-            </div>
-            <p class="mt-6 text-xs text-slate-400 text-center">
-                Do not publish package components or prices until Klinik Bustari&rsquo;s current offer is confirmed.
-                Hubungi klinik melalui WhatsApp untuk maklumat harga terkini.
             </p>
         </div>
     </section>
