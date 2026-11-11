@@ -560,7 +560,7 @@
                 @endforeach
             </div>
 
-            <a href="{{ $wa }}" target="_blank" rel="noopener" class="mt-10 inline-flex items-center rounded-full bg-cta hover:bg-cta-dark transition-colors text-white font-semibold px-6 py-3 sm:px-8 sm:py-3.5 text-center leading-snug shadow-sm">
+            <a href="https://klinikbustari.com/appointment.html" target="_blank" rel="noopener" class="mt-10 inline-flex items-center rounded-full bg-cta hover:bg-cta-dark transition-colors text-white font-semibold px-6 py-3 sm:px-8 sm:py-3.5 text-center leading-snug shadow-sm">
                 Saya Nak Buat Assessment
             </a>
         </div>
