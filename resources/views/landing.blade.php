@@ -2,7 +2,8 @@
 <html lang="ms">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0f766e">
     <title>Diabetes Reset Program™ — Klinik Bustari</title>
     <meta name="description" content="Program metabolik 3 bulan yang diselia doktor: penilaian, data glukosa, pendidikan, intervensi gaya hidup dan pemantauan berkala untuk pesakit Type 2 Diabetes.">
 
@@ -46,8 +47,9 @@
                 <span class="font-semibold tracking-wide text-slate-900">KLINIK BUSTARI</span>
             </div>
             <a href="{{ $wa }}" target="_blank" rel="noopener"
-               class="hidden sm:inline-flex items-center gap-2 rounded-full bg-amber-500 hover:bg-amber-600 transition-colors text-white text-sm font-semibold px-5 py-2.5 shadow-sm">
-                WhatsApp {{ $waNumber }}
+               class="inline-flex items-center gap-2 rounded-full bg-amber-500 hover:bg-amber-600 transition-colors text-white text-sm font-semibold px-4 py-2 sm:px-5 sm:py-2.5 shadow-sm whitespace-nowrap">
+                <span class="sm:hidden">WhatsApp</span>
+                <span class="hidden sm:inline">WhatsApp {{ $waNumber }}</span>
             </a>
         </div>
     </header>
@@ -76,11 +78,11 @@
                 </p>
 
                 <div class="mt-8 flex flex-col sm:flex-row gap-3">
-                    <a href="#assessment" class="inline-flex justify-center items-center rounded-full bg-teal-700 hover:bg-teal-800 transition-colors text-white font-semibold px-7 py-3.5 shadow-sm">
+                    <a href="#assessment" class="inline-flex justify-center items-center rounded-full bg-teal-700 hover:bg-teal-800 transition-colors text-white font-semibold px-6 py-3 sm:px-7 sm:py-3.5 text-center leading-snug shadow-sm">
                         Tempah Diabetes Reset Assessment
                     </a>
-                    <a href="{{ $wa }}" target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 rounded-full border border-teal-700 text-teal-700 hover:bg-teal-50 transition-colors font-semibold px-7 py-3.5">
-                        WhatsApp Klinik Bustari &middot; {{ $waNumber }}
+                    <a href="{{ $wa }}" target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 rounded-full border border-teal-700 text-teal-700 hover:bg-teal-50 transition-colors font-semibold px-6 py-3 sm:px-7 sm:py-3.5 text-center leading-snug">
+                        <span class="sm:hidden">WhatsApp {{ $waNumber }}</span><span class="hidden sm:inline">WhatsApp Klinik Bustari &middot; {{ $waNumber }}</span>
                     </a>
                 </div>
 
@@ -131,7 +133,7 @@
     </section>
 
     {{-- ============ SECTION 2 — PATIENT IDENTIFICATION ============ --}}
-    <section class="mx-auto max-w-3xl px-5 py-16 md:py-20 text-center">
+    <section class="mx-auto max-w-3xl px-5 py-12 sm:py-16 md:py-20 text-center">
         <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">
             &ldquo;Doktor&hellip; Saya Dah Jaga Makan. Kenapa Gula Masih Tinggi?&rdquo;
         </h2>
@@ -154,7 +156,7 @@
     </section>
 
     {{-- ============ SECTION 3 — THE REFRAME ============ --}}
-    <section class="bg-slate-900 text-white py-16 md:py-24">
+    <section class="bg-slate-900 text-white py-12 sm:py-16 md:py-24">
         <div class="mx-auto max-w-4xl px-5 text-center">
             <h2 class="text-2xl md:text-4xl font-extrabold leading-tight">
                 DIABETES BUKAN SEKADAR<br class="hidden sm:block"> MASALAH GULA.
@@ -192,7 +194,7 @@
     </section>
 
     {{-- ============ SECTION 4 — UNIQUE MECHANISM ============ --}}
-    <section class="py-16 md:py-24 bg-teal-50">
+    <section class="py-12 sm:py-16 md:py-24 bg-teal-50">
         <div class="mx-auto max-w-4xl px-5 text-center">
             <p class="text-xs font-bold tracking-widest text-amber-600 uppercase">Introducing</p>
             <h2 class="mt-2 text-2xl md:text-4xl font-extrabold text-slate-900">
@@ -202,7 +204,7 @@
 
             <div class="mt-10 flex flex-wrap items-center justify-center gap-2 md:gap-3 text-sm md:text-base font-bold text-teal-800">
                 @foreach (['Measure', 'Understand', 'Intervene', 'Monitor', 'Adjust'] as $i => $s)
-                    <span class="rounded-full bg-white border border-teal-200 px-4 py-2 shadow-sm">{{ $s }}</span>
+                    <span class="rounded-full bg-white border border-teal-200 px-3 py-1.5 sm:px-4 sm:py-2 shadow-sm">{{ $s }}</span>
                     @if(!$loop->last)<span class="text-teal-400">&rarr;</span>@endif
                 @endforeach
             </div>
@@ -297,7 +299,7 @@
 
     {{-- ============ SECTIONS 5–11 — THE 5 STEPS ============ --}}
     @foreach ($steps as $i => $step)
-        <section class="py-16 md:py-20 {{ $i % 2 === 0 ? 'bg-white' : 'bg-slate-50' }} border-t border-slate-100">
+        <section class="py-12 sm:py-16 md:py-20 {{ $i % 2 === 0 ? 'bg-white' : 'bg-slate-50' }} border-t border-slate-100">
             <div class="mx-auto max-w-3xl px-5">
                 <div class="flex items-baseline gap-4">
                     <span class="text-4xl md:text-5xl font-black text-teal-100">{{ $step['num'] }}</span>
@@ -328,7 +330,7 @@
                 @endif
 
                 @if($step['title'] === 'Measure')
-                    <a href="#assessment" class="mt-10 inline-flex items-center rounded-full bg-teal-700 hover:bg-teal-800 transition-colors text-white font-semibold px-7 py-3.5">
+                    <a href="#assessment" class="mt-10 inline-flex items-center rounded-full bg-teal-700 hover:bg-teal-800 transition-colors text-white font-semibold px-6 py-3 sm:px-7 sm:py-3.5 text-center leading-snug">
                         Mulakan Dengan Assessment
                     </a>
                 @endif
@@ -353,7 +355,7 @@
                     <p class="mt-6 text-slate-600">Kemudian pelan boleh disesuaikan berdasarkan keadaan klinikal.</p>
                     <div class="mt-8 flex flex-wrap items-center gap-2 text-sm font-bold text-teal-800">
                         @foreach (['Measure', 'Understand', 'Intervene', 'Monitor', 'Adjust'] as $s)
-                            <span class="rounded-full bg-teal-50 border border-teal-200 px-4 py-2">{{ $s }}</span>
+                            <span class="rounded-full bg-teal-50 border border-teal-200 px-3 py-1.5 sm:px-4 sm:py-2">{{ $s }}</span>
                             @if(!$loop->last)<span class="text-teal-400">&rarr;</span>@endif
                         @endforeach
                         <span class="text-teal-400">&#8635;</span>
@@ -365,7 +367,7 @@
 
         {{-- ============ SECTION 6 — CGM DISCOVERY (inserted after Measure) ============ --}}
         @if($step['title'] === 'Measure')
-            <section class="py-16 md:py-20 bg-teal-900 text-white">
+            <section class="py-12 sm:py-16 md:py-20 bg-teal-900 text-white">
                 <div class="mx-auto max-w-3xl px-5">
                     <h2 class="text-2xl md:text-3xl font-extrabold text-center leading-snug">
                         Bayangkan Anda Boleh Melihat Apa Yang Berlaku Selepas Setiap Hidangan.
@@ -385,7 +387,7 @@
 
                     <div class="mt-10 flex flex-wrap items-center justify-center gap-2 text-sm font-bold">
                         @foreach (['Food', 'Glucose Response', 'Learn', 'Modify', 'Measure Again'] as $s)
-                            <span class="rounded-full bg-white/10 border border-white/20 px-4 py-2">{{ $s }}</span>
+                            <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1.5 sm:px-4 sm:py-2">{{ $s }}</span>
                             @if(!$loop->last)<span class="text-teal-300">&rarr;</span>@endif
                         @endforeach
                     </div>
@@ -400,7 +402,7 @@
 
         {{-- ============ SECTION 9 — THE BIG DIFFERENCE (inserted after Intervene) ============ --}}
         @if($step['title'] === 'Intervene')
-            <section class="py-16 md:py-20 bg-white border-t border-slate-100">
+            <section class="py-12 sm:py-16 md:py-20 bg-white border-t border-slate-100">
                 <div class="mx-auto max-w-2xl px-5 text-center">
                     <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">
                         Kebanyakan Orang Tahu Apa Yang Mereka &ldquo;Patut&rdquo; Buat.
@@ -423,7 +425,7 @@
     @endforeach
 
     {{-- ============ SECTION 12 — 3-MONTH ROADMAP ============ --}}
-    <section class="py-16 md:py-24 bg-slate-900 text-white">
+    <section class="py-12 sm:py-16 md:py-24 bg-slate-900 text-white">
         <div class="mx-auto max-w-5xl px-5">
             <h2 class="text-2xl md:text-3xl font-extrabold text-center">Perjalanan Diabetes Reset Anda</h2>
 
@@ -452,7 +454,7 @@
     </section>
 
     {{-- ============ SECTION 13 — FUTURE PACING ============ --}}
-    <section class="py-16 md:py-20 bg-white">
+    <section class="py-12 sm:py-16 md:py-20 bg-white">
         <div class="mx-auto max-w-2xl px-5 text-center">
             <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">
                 Apa Yang Kami Mahu Anda Faham Selepas 3 Bulan?
@@ -480,7 +482,7 @@
     </section>
 
     {{-- ============ SECTION 14 — REMISSION ============ --}}
-    <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-100">
+    <section class="py-12 sm:py-16 md:py-20 bg-slate-50 border-t border-slate-100">
         <div class="mx-auto max-w-2xl px-5">
             <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 text-center">
                 Bolehkah Type 2 Diabetes Masuk Remisi?
@@ -503,7 +505,7 @@
     </section>
 
     {{-- ============ SECTION 15 — MEDICATION OBJECTION ============ --}}
-    <section class="py-16 md:py-20 bg-white">
+    <section class="py-12 sm:py-16 md:py-20 bg-white">
         <div class="mx-auto max-w-2xl px-5">
             <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 text-center">
                 &ldquo;Kalau Saya Join, Boleh Berhenti Ubat?&rdquo;
@@ -528,7 +530,7 @@
     </section>
 
     {{-- ============ SECTION 16 — WHO IT'S FOR ============ --}}
-    <section id="assessment" class="py-16 md:py-24 bg-teal-50">
+    <section id="assessment" class="py-12 sm:py-16 md:py-24 bg-teal-50">
         <div class="mx-auto max-w-3xl px-5 text-center">
             <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Adakah Diabetes Reset Sesuai Untuk Saya?</h2>
             <p class="mt-3 text-slate-600">Program ini mungkin sesuai untuk anda jika:</p>
@@ -551,14 +553,14 @@
                 @endforeach
             </div>
 
-            <a href="{{ $wa }}" target="_blank" rel="noopener" class="mt-10 inline-flex items-center rounded-full bg-teal-700 hover:bg-teal-800 transition-colors text-white font-semibold px-8 py-3.5 shadow-sm">
+            <a href="{{ $wa }}" target="_blank" rel="noopener" class="mt-10 inline-flex items-center rounded-full bg-teal-700 hover:bg-teal-800 transition-colors text-white font-semibold px-6 py-3 sm:px-8 sm:py-3.5 text-center leading-snug shadow-sm">
                 Saya Nak Buat Assessment
             </a>
         </div>
     </section>
 
     {{-- ============ SECTION 17 — NOT FOR EVERYONE ============ --}}
-    <section class="py-16 md:py-20 bg-slate-900 text-white">
+    <section class="py-12 sm:py-16 md:py-20 bg-slate-900 text-white">
         <div class="mx-auto max-w-2xl px-5 text-center">
             <h2 class="text-2xl md:text-3xl font-extrabold">Diabetes Reset Bukan &ldquo;Magic Cure&rdquo;.</h2>
             <p class="mt-4 text-slate-300">Kami tidak akan menjanjikan:</p>
@@ -577,14 +579,14 @@
             <p class="mt-10 text-slate-300">Apa yang kami tawarkan ialah:</p>
             <div class="mt-4 flex flex-wrap justify-center gap-2 text-sm font-semibold">
                 @foreach (['Medical Assessment', 'Metabolic Data', 'Education', 'Lifestyle Intervention', 'Monitoring', 'Clinical Review'] as $x)
-                    <span class="rounded-full bg-teal-800/60 border border-teal-600/50 px-4 py-2">{{ $x }}</span>
+                    <span class="rounded-full bg-teal-800/60 border border-teal-600/50 px-3 py-1.5 sm:px-4 sm:py-2">{{ $x }}</span>
                 @endforeach
             </div>
         </div>
     </section>
 
     {{-- ============ SECTION 19 — WHAT'S INCLUDED ============ --}}
-    <section class="py-16 md:py-20 bg-teal-50">
+    <section class="py-12 sm:py-16 md:py-20 bg-teal-50">
         <div class="mx-auto max-w-3xl px-5 text-center">
             <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Your Diabetes Reset Journey</h2>
             <p class="mt-2 text-sm font-bold tracking-widest text-amber-600 uppercase">3-Month Program</p>
@@ -610,7 +612,7 @@
     </section>
 
     {{-- ============ SECTION 21 — FAQ ============ --}}
-    <section class="py-16 md:py-20 bg-slate-50">
+    <section class="py-12 sm:py-16 md:py-20 bg-slate-50">
         <div class="mx-auto max-w-2xl px-5">
             <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 text-center">Frequently Asked Questions</h2>
 
@@ -636,7 +638,7 @@
     </section>
 
     {{-- ============ SECTION 22 — FINAL CLOSE ============ --}}
-    <section class="py-16 md:py-24 bg-teal-900 text-white text-center">
+    <section class="py-12 sm:py-16 md:py-24 bg-teal-900 text-white text-center">
         <div class="mx-auto max-w-2xl px-5">
             <h2 class="text-2xl md:text-3xl font-extrabold">Anda Ada Dua Pilihan.</h2>
             <p class="mt-6 text-teal-100">Terus melihat satu nombor setiap beberapa bulan&hellip;</p>
@@ -646,7 +648,7 @@
 
             <div class="mt-8 flex flex-wrap justify-center gap-2 text-sm font-bold uppercase tracking-wide">
                 @foreach (['Measure', 'Understand', 'Intervene', 'Monitor', 'Adjust'] as $s)
-                    <span class="rounded-full bg-white/10 border border-white/20 px-4 py-2">{{ $s }}</span>
+                    <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1.5 sm:px-4 sm:py-2">{{ $s }}</span>
                 @endforeach
             </div>
 
@@ -656,10 +658,10 @@
             <p class="mt-4 text-teal-200 font-semibold">Klinik Bustari</p>
 
             <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="{{ $wa }}" target="_blank" rel="noopener" class="inline-flex justify-center items-center rounded-full bg-amber-500 hover:bg-amber-600 transition-colors text-white font-semibold px-8 py-3.5 shadow-sm">
+                <a href="{{ $wa }}" target="_blank" rel="noopener" class="inline-flex justify-center items-center rounded-full bg-amber-500 hover:bg-amber-600 transition-colors text-white font-semibold px-6 py-3 sm:px-8 sm:py-3.5 text-center leading-snug shadow-sm">
                     Tempah Diabetes Reset Assessment
                 </a>
-                <a href="{{ $wa }}" target="_blank" rel="noopener" class="inline-flex justify-center items-center rounded-full border border-white/40 text-white hover:bg-white/10 transition-colors font-semibold px-8 py-3.5">
+                <a href="{{ $wa }}" target="_blank" rel="noopener" class="inline-flex justify-center items-center rounded-full border border-white/40 text-white hover:bg-white/10 transition-colors font-semibold px-6 py-3 sm:px-8 sm:py-3.5 text-center leading-snug">
                     WhatsApp &middot; {{ $waNumber }}
                 </a>
             </div>
@@ -672,13 +674,13 @@
     </footer>
 
     {{-- ============ MOBILE STICKY CTA ============ --}}
-    <div class="fixed bottom-0 inset-x-0 z-50 sm:hidden bg-white border-t border-slate-200 px-4 py-3 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]">
+    <div class="fixed bottom-0 inset-x-0 z-50 sm:hidden bg-white/95 backdrop-blur border-t border-slate-200 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-4px_12px_rgba(0,0,0,0.06)]">
         <a href="{{ $wa }}" target="_blank" rel="noopener"
-           class="flex items-center justify-center gap-2 rounded-full bg-amber-500 text-white font-bold py-3">
-            WhatsApp Sekarang &middot; Diabetes Reset Assessment
+           class="flex items-center justify-center rounded-full bg-amber-500 active:bg-amber-600 text-white text-base font-bold py-3.5 px-4 text-center whitespace-nowrap">
+            WhatsApp Sekarang
         </a>
     </div>
-    <div class="h-16 sm:hidden"></div>
+    <div class="h-24 sm:hidden"></div>
 
 </body>
 </html>
