@@ -6,4 +6,37 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /*
+     * Brand palette — calm, clinical teal for trust; one warm orange reserved for actions.
+     * All text/background pairs used on the page meet WCAG AA (4.5:1 body, 3:1 large).
+     */
+
+    /* Teal (primary): headings, links, icons, tinted backgrounds, dark sections */
+    --color-teal-50: #effaf8;
+    --color-teal-100: #d5f2ee;
+    --color-teal-200: #aee4dd;
+    --color-teal-300: #7dd0c7;
+    --color-teal-400: #46b5ab;
+    --color-teal-500: #239a91;
+    --color-teal-600: #167e78;
+    --color-teal-700: #11645f;
+    --color-teal-800: #0f504d;
+    --color-teal-900: #0c3f3d;
+    --color-teal-950: #072a29;
+
+    /* CTA orange: every "act now" button. White text on cta = 5.2:1, on cta-dark = 7.3:1 */
+    --color-cta: #c2410c;
+    --color-cta-dark: #9a3412;
+    --color-cta-soft: #fff1e8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
