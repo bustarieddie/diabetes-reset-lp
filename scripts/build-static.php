@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 $root = dirname(__DIR__);
 $url = rtrim($argv[1] ?? 'http://localhost', '/');
 
+// A running Vite dev server writes public/hot, which makes @vite emit dev-server URLs.
+if (file_exists($root.'/public/hot')) {
+    fwrite(STDERR, "public/hot exists (Vite dev server running). Stop it and delete public/hot, then re-run.\n");
+    exit(1);
+}
+
 require $root.'/vendor/autoload.php';
 
 putenv("APP_URL={$url}");
