@@ -54,7 +54,7 @@
                 <span class="font-semibold tracking-wide text-teal-950">KLINIK BUSTARI</span>
             </div>
             <a href="{{ $wa }}" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2 rounded-full bg-cta hover:bg-cta-dark transition-colors text-white text-sm font-semibold px-4 py-2 sm:px-5 sm:py-2.5 shadow-sm whitespace-nowrap">
+               class="inline-flex items-center gap-2 rounded-full bg-cta hover:bg-cta-dark active:bg-cta-dark active:scale-[0.98] touch-manipulation transition-colors text-white text-sm font-semibold px-4 py-2 sm:px-5 sm:py-2.5 shadow-sm whitespace-nowrap">
                 <span class="sm:hidden">WhatsApp</span>
                 <span class="hidden sm:inline">WhatsApp {{ $waNumber }}</span>
             </a>
@@ -85,7 +85,7 @@
                 </p>
 
                 <div class="mt-8 flex flex-col sm:flex-row gap-3">
-                    <a href="https://klinikbustari.com/appointment.html" class="inline-flex justify-center items-center rounded-full bg-cta hover:bg-cta-dark transition-colors text-white font-semibold px-6 py-3 sm:px-7 sm:py-3.5 text-center leading-snug shadow-sm">
+                    <a href="https://klinikbustari.com/appointment.html" class="inline-flex justify-center items-center rounded-full bg-cta hover:bg-cta-dark active:bg-cta-dark active:scale-[0.98] touch-manipulation transition-colors text-white font-semibold px-6 py-3 sm:px-7 sm:py-3.5 text-center leading-snug shadow-sm">
                         Tempah Diabetes Reset Assessment
                     </a>
                     <a href="{{ $wa }}" target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 rounded-full border border-teal-700 text-teal-700 hover:bg-teal-50 transition-colors font-semibold px-6 py-3 sm:px-7 sm:py-3.5 text-center leading-snug">
@@ -337,7 +337,7 @@
                 @endif
 
                 @if($step['title'] === 'Measure')
-                    <a href="https://klinikbustari.com/appointment.html" class="mt-10 inline-flex items-center rounded-full bg-cta hover:bg-cta-dark transition-colors text-white font-semibold px-6 py-3 sm:px-7 sm:py-3.5 text-center leading-snug">
+                    <a href="https://klinikbustari.com/appointment.html" class="mt-10 inline-flex items-center rounded-full bg-cta hover:bg-cta-dark active:bg-cta-dark active:scale-[0.98] touch-manipulation transition-colors text-white font-semibold px-6 py-3 sm:px-7 sm:py-3.5 text-center leading-snug">
                         Mulakan Dengan Assessment
                     </a>
                 @endif
@@ -560,7 +560,7 @@
                 @endforeach
             </div>
 
-            <a href="https://klinikbustari.com/appointment.html" class="mt-10 inline-flex items-center rounded-full bg-cta hover:bg-cta-dark transition-colors text-white font-semibold px-6 py-3 sm:px-8 sm:py-3.5 text-center leading-snug shadow-sm">
+            <a href="https://klinikbustari.com/appointment.html" class="mt-10 inline-flex items-center rounded-full bg-cta hover:bg-cta-dark active:bg-cta-dark active:scale-[0.98] touch-manipulation transition-colors text-white font-semibold px-6 py-3 sm:px-8 sm:py-3.5 text-center leading-snug shadow-sm">
                 Saya Nak Buat Assessment
             </a>
         </div>
@@ -868,7 +868,7 @@
             <p class="mt-4 text-teal-200 font-semibold">Klinik Bustari</p>
 
             <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="https://klinikbustari.com/appointment.html" class="inline-flex justify-center items-center rounded-full bg-cta hover:bg-cta-dark transition-colors text-white font-semibold px-6 py-3 sm:px-8 sm:py-3.5 text-center leading-snug shadow-sm">
+                <a href="https://klinikbustari.com/appointment.html" class="inline-flex justify-center items-center rounded-full bg-cta hover:bg-cta-dark active:bg-cta-dark active:scale-[0.98] touch-manipulation transition-colors text-white font-semibold px-6 py-3 sm:px-8 sm:py-3.5 text-center leading-snug shadow-sm">
                     Tempah Diabetes Reset Assessment
                 </a>
                 <a href="{{ $wa }}" target="_blank" rel="noopener" class="inline-flex justify-center items-center rounded-full border border-white/40 text-white hover:bg-white/10 transition-colors font-semibold px-6 py-3 sm:px-8 sm:py-3.5 text-center leading-snug">
