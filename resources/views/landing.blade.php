@@ -624,8 +624,10 @@
                 Real Patients. Real Data. Real Progress.
             </h2>
 
+            <h3 class="mt-10 text-center text-sm font-bold uppercase tracking-widest text-teal-700">Kes 1 &middot; Data CGM</h3>
+
             {{-- Who is this patient --}}
-            <div class="mt-8 flex flex-wrap justify-center gap-2 text-sm font-semibold text-teal-900">
+            <div class="mt-4 flex flex-wrap justify-center gap-2 text-sm font-semibold text-teal-900">
                 <span class="rounded-full bg-teal-50 border border-teal-200 px-4 py-2">Wanita, 53 tahun</span>
                 <span class="rounded-full bg-teal-50 border border-teal-200 px-4 py-2">Diabetes 10 tahun</span>
                 <span class="rounded-full bg-teal-50 border border-teal-200 px-4 py-2">Ubat: Metformin</span>
@@ -687,8 +689,108 @@
             </div>
 
             <p class="mt-4 text-xs text-slate-600 text-center max-w-2xl mx-auto leading-relaxed">
-                Ini ialah satu kes individu. Individual results vary. Clinical outcomes depend on multiple factors.
-                Bacaan di atas ialah paparan CGM bagi satu hari (10 Julai dan 10 Ogos 2026), bukan ujian HbA1c.
+                Bacaan CGM di atas ialah paparan bagi satu hari (10 Julai dan 10 Ogos 2026), bukan ujian HbA1c.
+            </p>
+
+            {{-- ===================== CASE 2 — blood test before / after 3 months ===================== --}}
+            @php
+                // [name, unit, before, after, reference text, was the "before" value flagged high by the lab?]
+                $labRows = [
+                    ['Glukosa', 'mmol/L', '11.4', '5.8', 'Normal: kurang daripada 6.1', true],
+                    ['HbA1c', '%', '9.9', '6.1', 'Sasaran kawalan: kurang daripada 6.5', true],
+                    ['Insulin', 'uIU/ml', '12.4', '5.7', 'Rujukan: 1.9 hingga 23.0', false],
+                    ['HOMA-IR (rintangan insulin)', 'ratio', '6.3', '1.5', 'Rujukan: 0 hingga 2.9', true],
+                ];
+                $labShots = [
+                    ['Sebelum', 'images/lab-before-2.jpg', 1320, 296, 'Keputusan makmal sebelum program: glukosa 11.4 mmol/L, HbA1c 9.9%, insulin 12.4 uIU/ml, HOMA-IR 6.3', 'bg-red-100 text-red-800 border-red-300', 'border-red-200'],
+                    ['Selepas 3 bulan', 'images/lab-after-2.jpg', 1320, 291, 'Keputusan makmal selepas 3 bulan: glukosa 5.8 mmol/L, HbA1c 6.1%, insulin 5.7 uIU/ml, HOMA-IR 1.5', 'bg-emerald-100 text-emerald-800 border-emerald-300', 'border-emerald-300'],
+                ];
+            @endphp
+            <div class="mt-14 pt-10 border-t border-teal-200">
+                <h3 class="text-center text-sm font-bold uppercase tracking-widest text-teal-700">Kes 2 &middot; Ujian Darah</h3>
+
+                <div class="mt-4 flex flex-wrap justify-center gap-2 text-sm font-semibold text-teal-900">
+                    <span class="rounded-full bg-teal-50 border border-teal-200 px-4 py-2">Lelaki, 42 tahun</span>
+                    <span class="rounded-full bg-teal-50 border border-teal-200 px-4 py-2">Diabetes 5 tahun</span>
+                    <span class="rounded-full bg-teal-50 border border-teal-200 px-4 py-2">Hipertensi</span>
+                    <span class="rounded-full bg-teal-50 border border-teal-200 px-4 py-2">Overweight</span>
+                </div>
+
+                {{-- Headline results --}}
+                <div class="mt-8 grid sm:grid-cols-2 gap-4">
+                    <div class="rounded-2xl bg-teal-950 text-white p-6 text-center">
+                        <p class="text-sm text-teal-100">HbA1c</p>
+                        <p class="mt-2 text-3xl sm:text-4xl font-black">
+                            <span class="text-red-300">9.9%</span>
+                            <span class="text-teal-200 mx-1">&rarr;</span>
+                            <span class="text-emerald-300">6.1%</span>
+                        </p>
+                        <p class="mt-1 text-sm text-teal-100">dalam masa 3 bulan</p>
+                    </div>
+                    <div class="rounded-2xl bg-teal-950 text-white p-6 text-center">
+                        <p class="text-sm text-teal-100">Rintangan insulin (HOMA-IR)</p>
+                        <p class="mt-2 text-3xl sm:text-4xl font-black">
+                            <span class="text-red-300">6.3</span>
+                            <span class="text-teal-200 mx-1">&rarr;</span>
+                            <span class="text-emerald-300">1.5</span>
+                        </p>
+                        <p class="mt-1 text-sm text-teal-100">dalam masa 3 bulan</p>
+                    </div>
+                </div>
+
+                {{-- Full comparison table --}}
+                <div class="mt-8 overflow-hidden rounded-2xl border-2 border-teal-200">
+                    <table class="w-full text-left">
+                        <caption class="sr-only">Perbandingan keputusan ujian darah sebelum dan selepas 3 bulan Diabetes Reset Program</caption>
+                        <thead class="bg-teal-50 text-sm text-teal-950">
+                            <tr>
+                                <th scope="col" class="px-3 sm:px-5 py-3 font-bold">Ujian</th>
+                                <th scope="col" class="px-2 sm:px-5 py-3 font-bold text-right">Sebelum</th>
+                                <th scope="col" class="px-3 sm:px-5 py-3 font-bold text-right">Selepas 3 bulan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-teal-100">
+                            @foreach ($labRows as [$name, $unit, $before, $after, $ref, $high])
+                                <tr>
+                                    <th scope="row" class="px-3 sm:px-5 py-3 font-semibold text-teal-950">
+                                        {{ $name }} <span class="font-normal text-slate-600 text-xs">({{ $unit }})</span>
+                                        <span class="block font-normal text-xs text-slate-600">{{ $ref }}</span>
+                                    </th>
+                                    <td class="px-2 sm:px-5 py-3 text-right text-base sm:text-lg font-bold {{ $high ? 'text-red-700' : 'text-slate-700' }}">
+                                        @if($high)<span aria-label="melebihi julat rujukan" title="Melebihi julat rujukan">&uarr;</span>@endif{{ $before }}
+                                    </td>
+                                    <td class="px-3 sm:px-5 py-3 text-right text-base sm:text-lg font-bold text-emerald-700">{{ $after }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mt-3 text-xs text-slate-600 text-center">&uarr; = melebihi julat rujukan makmal.</p>
+
+                <p class="mt-4 rounded-xl bg-teal-50 border border-teal-200 px-5 py-4 text-sm text-slate-700 leading-relaxed">
+                    Berdasarkan julat rujukan makmal, selepas 3 bulan HbA1c berada di bawah sasaran kawalan (kurang daripada 6.5%),
+                    manakala glukosa dan HOMA-IR berada dalam julat normal.
+                </p>
+
+                {{-- Original lab reports --}}
+                <div class="mt-8 grid gap-6">
+                    @foreach ($labShots as [$label, $img, $w, $h, $alt, $badge, $ring])
+                        <figure class="rounded-2xl border-2 {{ $ring }} bg-white p-4 sm:p-5">
+                            <figcaption class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="rounded-full border-2 px-3 py-1 text-sm font-bold {{ $badge }}">{{ $label }}</span>
+                                <span class="text-xs text-slate-600">Keputusan makmal asal &middot; ketik untuk besarkan</span>
+                            </figcaption>
+                            <a href="{{ asset($img) }}" target="_blank" rel="noopener" class="block mt-4">
+                                <img src="{{ asset($img) }}" alt="{{ $alt }}" width="{{ $w }}" height="{{ $h }}" loading="lazy"
+                                     class="w-full h-auto rounded-lg border border-teal-100">
+                            </a>
+                        </figure>
+                    @endforeach
+                </div>
+            </div>
+
+            <p class="mt-10 text-xs text-slate-600 text-center max-w-2xl mx-auto leading-relaxed">
+                Setiap kes ialah kes individu. Individual results vary. Clinical outcomes depend on multiple factors.
             </p>
         </div>
     </section>
