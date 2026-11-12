@@ -592,6 +592,107 @@
         </div>
     </section>
 
+    {{-- ============ SECTION 18 — SOCIAL PROOF (real case, real CGM data) ============ --}}
+    @php
+        $caseShots = [
+            [
+                'label' => 'Sebelum',
+                'date' => '10 Julai 2026',
+                'badge' => 'bg-red-100 text-red-800 border-red-300',
+                'ring' => 'border-red-200',
+                'img' => 'images/cgm-before-2026-07-10.jpg',
+                'alt' => 'Graf CGM 10 Julai 2026: glukosa berada antara 16.9 dan 25 mmol/L sepanjang hari, jauh di atas julat sasaran',
+                'w' => 800, 'h' => 729,
+                'stats' => [['Purata', '20.7 mmol/L'], ['Tertinggi', '25 mmol/L'], ['Terendah', '16.9 mmol/L'], ['TIR', '0%'], ['TAR', '100%'], ['TBR', '0%']],
+            ],
+            [
+                'label' => 'Selepas 1 bulan',
+                'date' => '10 Ogos 2026',
+                'badge' => 'bg-emerald-100 text-emerald-800 border-emerald-300',
+                'ring' => 'border-emerald-300',
+                'img' => 'images/cgm-after-2026-08-10.jpg',
+                'alt' => 'Graf CGM 10 Ogos 2026: glukosa berada antara 4.3 dan 9.2 mmol/L sepanjang hari, dalam julat sasaran',
+                'w' => 800, 'h' => 700,
+                'stats' => [['Purata', '6.9 mmol/L'], ['Tertinggi', '9.2 mmol/L'], ['Terendah', '4.3 mmol/L'], ['TIR', '100%'], ['TAR', '0%'], ['TBR', '0%']],
+            ],
+        ];
+    @endphp
+    <section class="py-12 sm:py-16 md:py-20 bg-white border-t border-teal-100">
+        <div class="mx-auto max-w-5xl px-5">
+            <p class="text-center text-xs font-bold tracking-widest text-cta uppercase">Kes Pesakit Sebenar</p>
+            <h2 class="mt-2 text-2xl md:text-3xl font-extrabold text-teal-950 text-center">
+                Real Patients. Real Data. Real Progress.
+            </h2>
+
+            {{-- Who is this patient --}}
+            <div class="mt-8 flex flex-wrap justify-center gap-2 text-sm font-semibold text-teal-900">
+                <span class="rounded-full bg-teal-50 border border-teal-200 px-4 py-2">Wanita, 53 tahun</span>
+                <span class="rounded-full bg-teal-50 border border-teal-200 px-4 py-2">Diabetes 10 tahun</span>
+                <span class="rounded-full bg-teal-50 border border-teal-200 px-4 py-2">Ubat: Metformin</span>
+                <span class="rounded-full bg-red-50 border border-red-200 text-red-800 px-4 py-2">HbA1c sebelum program: 14.7%</span>
+            </div>
+
+            {{-- Headline result --}}
+            <div class="mt-8 grid sm:grid-cols-2 gap-4">
+                <div class="rounded-2xl bg-teal-950 text-white p-6 text-center">
+                    <p class="text-sm text-teal-100">Purata glukosa (CGM)</p>
+                    <p class="mt-2 text-3xl sm:text-4xl font-black">
+                        <span class="text-red-300">20.7</span>
+                        <span class="text-teal-200 mx-1">&rarr;</span>
+                        <span class="text-emerald-300">6.9</span>
+                    </p>
+                    <p class="mt-1 text-sm text-teal-100">mmol/L dalam 1 bulan</p>
+                </div>
+                <div class="rounded-2xl bg-teal-950 text-white p-6 text-center">
+                    <p class="text-sm text-teal-100">Time in Range (3.9&ndash;10 mmol/L)</p>
+                    <p class="mt-2 text-3xl sm:text-4xl font-black">
+                        <span class="text-red-300">0%</span>
+                        <span class="text-teal-200 mx-1">&rarr;</span>
+                        <span class="text-emerald-300">100%</span>
+                    </p>
+                    <p class="mt-1 text-sm text-teal-100">daripada masa dalam sehari</p>
+                </div>
+            </div>
+
+            {{-- Before / after CGM --}}
+            <div class="mt-8 grid md:grid-cols-2 gap-6">
+                @foreach ($caseShots as $shot)
+                    <figure class="rounded-2xl border-2 {{ $shot['ring'] }} bg-white p-4 sm:p-5">
+                        <figcaption class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="rounded-full border-2 px-3 py-1 text-sm font-bold {{ $shot['badge'] }}">{{ $shot['label'] }}</span>
+                            <span class="text-sm font-semibold text-slate-600">{{ $shot['date'] }}</span>
+                        </figcaption>
+                        <img src="{{ asset($shot['img']) }}" alt="{{ $shot['alt'] }}" width="{{ $shot['w'] }}" height="{{ $shot['h'] }}" loading="lazy"
+                             class="mt-4 w-full h-auto rounded-lg border border-teal-100">
+                        <dl class="mt-4 grid grid-cols-3 gap-2 text-center">
+                            @foreach ($shot['stats'] as [$k, $v])
+                                <div class="rounded-lg bg-teal-50 py-2 px-1">
+                                    <dt class="text-xs text-slate-600">{{ $k }}</dt>
+                                    <dd class="text-sm font-bold text-teal-950">{{ $v }}</dd>
+                                </div>
+                            @endforeach
+                        </dl>
+                    </figure>
+                @endforeach
+            </div>
+
+            {{-- Plain-language legend --}}
+            <div class="mt-6 rounded-xl bg-teal-50 border border-teal-200 px-5 py-4 text-sm text-slate-700 leading-relaxed">
+                <p class="font-semibold text-teal-900">Cara membaca angka ini</p>
+                <ul class="mt-2 space-y-1">
+                    <li><strong>TIR</strong> (Time in Range): peratus masa glukosa berada dalam julat sasaran 3.9&ndash;10 mmol/L. Lebih tinggi lebih baik.</li>
+                    <li><strong>TAR</strong> (Time Above Range): peratus masa glukosa melebihi 10 mmol/L.</li>
+                    <li><strong>TBR</strong> (Time Below Range): peratus masa glukosa kurang daripada 3.9 mmol/L.</li>
+                </ul>
+            </div>
+
+            <p class="mt-4 text-xs text-slate-600 text-center max-w-2xl mx-auto leading-relaxed">
+                Ini ialah satu kes individu. Individual results vary. Clinical outcomes depend on multiple factors.
+                Bacaan di atas ialah paparan CGM bagi satu hari (10 Julai dan 10 Ogos 2026), bukan ujian HbA1c.
+            </p>
+        </div>
+    </section>
+
     {{-- ============ SECTION 19 — WHAT'S INCLUDED ============ --}}
     <section class="py-12 sm:py-16 md:py-20 bg-teal-50">
         <div class="mx-auto max-w-3xl px-5 text-center">
