@@ -35,8 +35,8 @@
 <body class="bg-white text-slate-800 antialiased text-[17px]">
 
     @php
-        $wa = 'https://wa.me/601165004234?text=' . urlencode('Saya berminat untuk tempah Diabetes Reset Assessment.');
-        $waNumber = '011-6500 4234';
+        $wa = 'https://wa.me/60168583490?text=' . urlencode('Saya berminat untuk tempah Diabetes Reset Assessment.');
+        $waNumber = '016-858 3490';
         $stepColors = [
             'Measure'    => ['badge' => 'bg-sky-100 text-sky-800 border-sky-300',             'pill' => 'bg-sky-50 border-sky-300 text-sky-900'],
             'Understand' => ['badge' => 'bg-violet-100 text-violet-800 border-violet-300',    'pill' => 'bg-violet-50 border-violet-300 text-violet-900'],
